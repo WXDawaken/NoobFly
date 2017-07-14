@@ -24,12 +24,14 @@
 ".\objects\stm32f4xx_usart.o"
 ".\objects\stm32f4xx_wwdg.o"
 ".\objects\system_stm32f4xx.o"
+".\Libraries\CMSIS\CoreSupport\arm_cortexM4lf_math.lib"
 ".\objects\bsp.o"
 ".\objects\usart.o"
 ".\objects\i2c.o"
 ".\objects\main.o"
 ".\objects\stm32f4xx_it.o"
 ".\objects\mpu.o"
+".\objects\os.o"
 --library_type=microlib --strict --scatter ".\Objects\ExecutableFile.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

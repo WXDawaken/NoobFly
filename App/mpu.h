@@ -3,7 +3,7 @@
 
 #include "stm32f4xx.h"
 #include "i2c.h"
-#include <math.h>
+#include <arm_math.h>
 
 // 定义MPU6050内部地址
 //****************************************

@@ -30,7 +30,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_it.h"
 #include "usart.h"
-
+#include "os.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -154,4 +154,13 @@ void USART1_IRQHandler(void)
   {
     USART1_SendByte(USART_ReceiveData(USART1));  
   }
+}
+
+void TIM2_IRQHandler(void)
+{
+   if(TIM_GetITStatus(TIM2,TIM_IT_Update)!=RESET)
+	 {
+	   tim_1ms();
+	 }
+	 TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
 }
