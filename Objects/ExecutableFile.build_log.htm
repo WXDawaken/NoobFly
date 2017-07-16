@@ -22,16 +22,23 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 W:\GitHub\NoobFly\NoobFly.uvprojx
-Project File Date:  07/13/2017
+Project File Date:  07/14/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 2 (build 169)', folder: 'G:\KEIL5\ARM\ARMCC\Bin'
 Build target 'Project'
-compiling system_stm32f4xx.c...
+compiling main.c...
+App\os.h(26): warning:  #1295-D: Deprecated declaration tim_1ms - give arg types
+  void tim_1ms();
+App\os.h(27): warning:  #1295-D: Deprecated declaration os_start - give arg types
+  void os_start();
+App\os.h(32): warning:  #1295-D: Deprecated declaration os_run - give arg types
+  void os_run();
+App\main.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=2684 RO-data=424 RW-data=16 ZI-data=1184  
+Program Size: Code=8304 RO-data=424 RW-data=44 ZI-data=1212  
 FromELF: creating hex file...
-".\Objects\ExecutableFile.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\ExecutableFile.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   W:\GitHub\NoobFly\RTE

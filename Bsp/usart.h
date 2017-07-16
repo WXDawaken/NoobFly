@@ -8,6 +8,8 @@ void USART_Initialize(void);
 void USART1_SendByte(uint8_t Data);
 void USART1_SendNByte(uint8_t *pData, uint16_t Length);
 void USART1_SendString(uint8_t *String);
-
+void USART3_SendByte(uint8_t Data);
+void USART3_SendNByte(uint8_t *pData, uint16_t Length);
+void USART3_SendString(uint8_t *String);
 
 #endif 

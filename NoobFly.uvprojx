@@ -172,12 +172,12 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -367,7 +367,7 @@
             <v6LangP>1</v6LangP>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>STM32F40_41xxx</Define>
+              <Define>STM32F40_41xxx,__FPU_PRESENT=1,__FPU_USED=1,ARM_MATH_CM4,__CC_ARM</Define>
               <Undefine></Undefine>
               <IncludePath>.\App;.\Bsp;.\Libraries\CMSIS\CoreSupport;.\Libraries\CMSIS\DeviceSupport;.\Libraries\CMSIS\DeviceSupport\startup;.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\STM32F4xx_StdPeriph_Driver\src</IncludePath>
             </VariousControls>
@@ -547,6 +547,11 @@
               <FileType>1</FileType>
               <FilePath>.\Libraries\CMSIS\DeviceSupport\system_stm32f4xx.c</FilePath>
             </File>
+            <File>
+              <FileName>arm_cortexM4lf_math.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>.\Libraries\CMSIS\CoreSupport\arm_cortexM4lf_math.lib</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -586,6 +591,11 @@
               <FileName>mpu.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\App\mpu.c</FilePath>
+            </File>
+            <File>
+              <FileName>os.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\os.c</FilePath>
             </File>
           </Files>
         </Group>
