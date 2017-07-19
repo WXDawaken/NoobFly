@@ -14,6 +14,7 @@ void NVIC_Configuration(void)
   NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x03;
   NVIC_InitStructure.NVIC_IRQChannelCmd=ENABLE;
   NVIC_Init(&NVIC_InitStructure);
+  
 }
 
 
@@ -21,5 +22,7 @@ void BSP_Init(void)
 {                                                   
   NVIC_Configuration();     
   USART_Initialize();	
+	SysTick_Config(SystemCoreClock/10000000);
+	SysTick->CTRL&=~SysTick_CTRL_ENABLE_Msk;
 }
 

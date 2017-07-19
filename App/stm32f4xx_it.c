@@ -31,7 +31,7 @@
 #include "stm32f4xx_it.h"
 #include "usart.h"
 #include "os.h"
-
+unsigned long Sys_tick=0;
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -138,6 +138,9 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
+    Sys_tick--;
+	  if(Sys_tick==1)
+				SysTick->CTRL&=~(uint32_t)(SysTick_CTRL_TICKINT_Msk|SysTick_CTRL_ENABLE_Msk);
 }
 
 /******************************************************************************/

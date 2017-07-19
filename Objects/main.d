@@ -39,8 +39,11 @@
 .\objects\main.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: App\os.h
 .\objects\main.o: .\Bsp\i2c.h
+.\objects\main.o: .\App\os.h
 .\objects\main.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
 .\objects\main.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h
 .\objects\main.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: App\mpu.h
+.\objects\main.o: App\motion.h
+.\objects\main.o: .\Math\mMATH.h

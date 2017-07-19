@@ -19,7 +19,7 @@ typedef struct TASK
 #define uchar unsigned char
 #define ulong unsigned long
 #define  p_f_max  10  
-
+extern unsigned long Sys_tick;
 
 void f_add(void add(),ulong time,ulong Delay);   
 extern TASK os_Tasks[p_f_max];

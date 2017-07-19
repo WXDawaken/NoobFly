@@ -4,7 +4,7 @@
 #include "stm32f4xx.h"
 #include "i2c.h"
 #include <arm_math.h>
-
+#include "USART.h"
 // 定义MPU6050内部地址
 //****************************************
 #define        SMPLRT_DIV          0x19        //陀螺仪采样率，典型值：0x07(125Hz)
@@ -31,13 +31,39 @@
 
 #define        PWR_MGMT_1          0x6B        //电源管理，典型值：0x00(正常启用)
 #define        WHO_AM_I            0x75        //IIC地址寄存器(默认数值0x68，只读)
+#define        INT_PIN_CFG         0x37
+#define        I2C_MASTER_CFG      0x6A
 
+#define        I2C_BYPASS_SET      0x02
+#define        I2C_MASTER_DIS      0x00
+//AKB8975 REG
+#define        AK_STATUS_1        0x02
+#define        AK_HXL             0x03
+#define        AK_HXH             0x04
+#define        AK_HYL             0x05
+#define        AK_HYH             0x06
+#define        AK_HZL             0x07
+#define        AK_HZH             0x08
+#define        AK_STATUS_2        0x09
+#define        AK_CNTL            0x0A
+#define        AK_ASAX            0x10 //only accessable in FUSE ROM MODE
+#define        AK_ASAY            0x11
+#define        AK_ASAZ            0x12
 
+#define        AK_DATA_READY      0x01
+#define 	     AK_DATA_ERROR      0x04
+#define        AK_SENSOR_OVERFLOW 0x08
+#define        AK_MODE_SINGLE_MEASURE  0x01
+#define        AK_MODE_SELF_TEST  0x08
+#define        AK_MODE_FUSE_ROM   0x0F
 //****************************
 
 #define        MPU6050_Addr        0xD0          //定义器件在IIC总线中的从地址,根据ALT  ADDRESS地址引脚不同修改
+#define        AK8975_Addr        0x18
+void mpu9150_Read(u8 *ACCEL,u8 *GYRO,u8 *MAG);
+void mpu9150_Init(void);
+void mpu9150_RawData(float *ACCEL,float *GYRO,float *MAG);
+void mpu9150_Adjust_Val(float *ac_adjust,float *gy_adjust,float *mag_adjust);
+void AK8975_Adjust_Val(u8 *adjust);
 
-void mpu6050_Read(u8 *ACCEL,u8 *GYRO);
-void mpu6050_Init(void);
-void mpu6050_RawData(u8 *ACCEL,u8 *GYRO);
 #endif

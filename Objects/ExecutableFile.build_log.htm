@@ -22,23 +22,196 @@ Dialog DLL:      TCM.DLL V1.14.5.0
  
 <h2>Project:</h2>
 W:\GitHub\NoobFly\NoobFly.uvprojx
-Project File Date:  07/14/2017
+Project File Date:  07/18/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 2 (build 169)', folder: 'G:\KEIL5\ARM\ARMCC\Bin'
 Build target 'Project'
+compiling i2c.c...
+.\App\os.h(26): warning:  #1295-D: Deprecated declaration tim_1ms - give arg types
+  void tim_1ms();
+.\App\os.h(27): warning:  #1295-D: Deprecated declaration os_start - give arg types
+  void os_start();
+.\App\os.h(32): warning:  #1295-D: Deprecated declaration os_run - give arg types
+  void os_run();
+Bsp\i2c.h(17): warning:  #1295-D: Deprecated declaration iic_Start - give arg types
+  u8 iic_Start();               //ÂºÄÂß?Ê†?Âø?
+Bsp\i2c.h(18): warning:  #1295-D: Deprecated declaration iic_Stop - give arg types
+  u8 iic_Stop();        //Áª?Êù?Ê†?Âø?
+Bsp\i2c.h(23): warning:  #1295-D: Deprecated declaration iic_ReadByte - give arg types
+  u8 iic_ReadByte();    //ËØ?Âè?‰∏Ä‰∏?Â≠?Ëä?
+Bsp\i2c.c(18): warning:  #177-D: variable "I2C_InitStructure" was declared but never referenced
+      I2C_InitTypeDef I2C_InitStructure;
+Bsp\i2c.c(67): warning:  #188-D: enumerated type mixed with another type
+        
+DA_H;
+Bsp\i2c.c(68): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(71): warning:  #188-D: enumerated type mixed with another type
+        
+DA_L;
+Bsp\i2c.c(73): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(79): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(81): warning:  #188-D: enumerated type mixed with another type
+        
+DA_L;
+Bsp\i2c.c(83): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(85): warning:  #188-D: enumerated type mixed with another type
+        
+DA_H;
+Bsp\i2c.c(87): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(89): warning:  #940-D: missing return statement at end of non-void function "iic_Stop"
+  }
+Bsp\i2c.c(92): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(94): warning:  #188-D: enumerated type mixed with another type
+        
+DA_L;
+Bsp\i2c.c(96): warning:  #188-D: enumerated type mixed with another type
+        
+CL_H;
+Bsp\i2c.c(98): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(103): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(105): warning:  #188-D: enumerated type mixed with another type
+        
+DA_H;
+Bsp\i2c.c(107): warning:  #188-D: enumerated type mixed with another type
+        
+CL_H;
+Bsp\i2c.c(109): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(114): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(116): warning:  #188-D: enumerated type mixed with another type
+        
+DA_H;
+Bsp\i2c.c(118): warning:  #188-D: enumerated type mixed with another type
+        
+CL_H;
+Bsp\i2c.c(121): warning:  #188-D: enumerated type mixed with another type
+                
+CL_L;
+Bsp\i2c.c(125): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(133): warning:  #188-D: enumerated type mixed with another type
+                
+CL_L;
+Bsp\i2c.c(136): warning:  #188-D: enumerated type mixed with another type
+                        
+DA_H;
+Bsp\i2c.c(138): warning:  #188-D: enumerated type mixed with another type
+                        
+DA_L;
+Bsp\i2c.c(141): warning:  #188-D: enumerated type mixed with another type
+                
+CL_H;
+Bsp\i2c.c(144): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c(151): warning:  #188-D: enumerated type mixed with another type
+         
+DA_H;
+Bsp\i2c.c(154): warning:  #188-D: enumerated type mixed with another type
+                
+CL_L;
+Bsp\i2c.c(156): warning:  #188-D: enumerated type mixed with another type
+                
+CL_H;
+Bsp\i2c.c(161): warning:  #188-D: enumerated type mixed with another type
+        
+CL_L;
+Bsp\i2c.c: 39 warnings, 0 errors
 compiling main.c...
+.\Bsp\i2c.h(17): warning:  #1295-D: Deprecated declaration iic_Start - give arg types
+  u8 iic_Start();               //ÂºÄÂß?Ê†?Âø?
+.\Bsp\i2c.h(18): warning:  #1295-D: Deprecated declaration iic_Stop - give arg types
+  u8 iic_Stop();        //Áª?Êù?Ê†?Âø?
+.\Bsp\i2c.h(23): warning:  #1295-D: Deprecated declaration iic_ReadByte - give arg types
+  u8 iic_ReadByte();    //ËØ?Âè?‰∏Ä‰∏?Â≠?Ëä?
 App\os.h(26): warning:  #1295-D: Deprecated declaration tim_1ms - give arg types
   void tim_1ms();
 App\os.h(27): warning:  #1295-D: Deprecated declaration os_start - give arg types
   void os_start();
 App\os.h(32): warning:  #1295-D: Deprecated declaration os_run - give arg types
   void os_run();
-App\main.c: 3 warnings, 0 errors
+.\Math\mMATH.h(33): warning:  #1-D: last line of file ends without a newline
+  #endif
+App\motion.h(11): warning:  #1-D: last line of file ends without a newline
+  #endif
+App\main.c(16): warning:  #1295-D: Deprecated declaration get_Adjusted_Sensor_Data - give arg types
+  void get_Adjusted_Sensor_Data();
+App\main.c(17): warning:  #1295-D: Deprecated declaration Adjust_Sensor_Data - give arg types
+  void Adjust_Sensor_Data();
+App\main.c(18): warning:  #1295-D: Deprecated declaration Motion_Detection - give arg types
+  void Motion_Detection();
+App\main.c: 11 warnings, 0 errors
+compiling stm32f4xx_it.c...
+.\Bsp\i2c.h(17): warning:  #1295-D: Deprecated declaration iic_Start - give arg types
+  u8 iic_Start();               //ÂºÄÂß?Ê†?Âø?
+.\Bsp\i2c.h(18): warning:  #1295-D: Deprecated declaration iic_Stop - give arg types
+  u8 iic_Stop();        //Áª?Êù?Ê†?Âø?
+.\Bsp\i2c.h(23): warning:  #1295-D: Deprecated declaration iic_ReadByte - give arg types
+  u8 iic_ReadByte();    //ËØ?Âè?‰∏Ä‰∏?Â≠?Ëä?
+App\os.h(26): warning:  #1295-D: Deprecated declaration tim_1ms - give arg types
+  void tim_1ms();
+App\os.h(27): warning:  #1295-D: Deprecated declaration os_start - give arg types
+  void os_start();
+App\os.h(32): warning:  #1295-D: Deprecated declaration os_run - give arg types
+  void os_run();
+App\stm32f4xx_it.c: 6 warnings, 0 errors
+compiling mpu.c...
+.\App\os.h(26): warning:  #1295-D: Deprecated declaration tim_1ms - give arg types
+  void tim_1ms();
+.\App\os.h(27): warning:  #1295-D: Deprecated declaration os_start - give arg types
+  void os_start();
+.\App\os.h(32): warning:  #1295-D: Deprecated declaration os_run - give arg types
+  void os_run();
+.\Bsp\i2c.h(17): warning:  #1295-D: Deprecated declaration iic_Start - give arg types
+  u8 iic_Start();               //ÂºÄÂß?Ê†?Âø?
+.\Bsp\i2c.h(18): warning:  #1295-D: Deprecated declaration iic_Stop - give arg types
+  u8 iic_Stop();        //Áª?Êù?Ê†?Âø?
+.\Bsp\i2c.h(23): warning:  #1295-D: Deprecated declaration iic_ReadByte - give arg types
+  u8 iic_ReadByte();    //ËØ?Âè?‰∏Ä‰∏?Â≠?Ëä?
+App\mpu.c(14): warning:  #550-D: variable "state" was set but never used
+        u8 state;
+App\mpu.c(127): warning:  #1-D: last line of file ends without a newline
+  }
+App\mpu.c: 8 warnings, 0 errors
+compiling os.c...
+.\Bsp\i2c.h(17): warning:  #1295-D: Deprecated declaration iic_Start - give arg types
+  u8 iic_Start();               //ÂºÄÂß?Ê†?Âø?
+.\Bsp\i2c.h(18): warning:  #1295-D: Deprecated declaration iic_Stop - give arg types
+  u8 iic_Stop();        //Áª?Êù?Ê†?Âø?
+.\Bsp\i2c.h(23): warning:  #1295-D: Deprecated declaration iic_ReadByte - give arg types
+  u8 iic_ReadByte();    //ËØ?Âè?‰∏Ä‰∏?Â≠?Ëä?
+App\os.h(26): warning:  #1295-D: Deprecated declaration tim_1ms - give arg types
+  void tim_1ms();
+App\os.h(27): warning:  #1295-D: Deprecated declaration os_start - give arg types
+  void os_start();
+App\os.h(32): warning:  #1295-D: Deprecated declaration os_run - give arg types
+  void os_run();
+App\os.c: 6 warnings, 0 errors
 linking...
-Program Size: Code=8304 RO-data=424 RW-data=44 ZI-data=1212  
+Program Size: Code=15588 RO-data=2732 RW-data=128 ZI-data=1816  
 FromELF: creating hex file...
-".\Objects\ExecutableFile.axf" - 0 Error(s), 3 Warning(s).
+".\Objects\ExecutableFile.axf" - 0 Error(s), 70 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   W:\GitHub\NoobFly\RTE

@@ -369,7 +369,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,__FPU_PRESENT=1,__FPU_USED=1,ARM_MATH_CM4,__CC_ARM</Define>
               <Undefine></Undefine>
-              <IncludePath>.\App;.\Bsp;.\Libraries\CMSIS\CoreSupport;.\Libraries\CMSIS\DeviceSupport;.\Libraries\CMSIS\DeviceSupport\startup;.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\STM32F4xx_StdPeriph_Driver\src</IncludePath>
+              <IncludePath>.\App;.\Bsp;.\Libraries\CMSIS\CoreSupport;.\Libraries\CMSIS\DeviceSupport;.\Libraries\CMSIS\DeviceSupport\startup;.\Libraries\STM32F4xx_StdPeriph_Driver\inc;.\Libraries\STM32F4xx_StdPeriph_Driver\src;.\Math</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -597,10 +597,25 @@
               <FileType>1</FileType>
               <FilePath>.\App\os.c</FilePath>
             </File>
+            <File>
+              <FileName>motion.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\motion.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Doc</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Math</GroupName>
+          <Files>
+            <File>
+              <FileName>MATH.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Math\MATH.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

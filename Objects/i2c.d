@@ -35,3 +35,9 @@
 .\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
 .\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\i2c.o: .\App\os.h
+.\objects\i2c.o: .\Bsp\i2c.h
+.\objects\i2c.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
+.\objects\i2c.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h
+.\objects\i2c.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\i2c.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h

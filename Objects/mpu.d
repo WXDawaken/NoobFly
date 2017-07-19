@@ -36,7 +36,11 @@
 .\objects\mpu.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\mpu.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\mpu.o: .\Bsp\i2c.h
+.\objects\mpu.o: .\App\os.h
+.\objects\mpu.o: .\Bsp\i2c.h
 .\objects\mpu.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
 .\objects\mpu.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h
 .\objects\mpu.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\mpu.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\mpu.o: .\Bsp\USART.h
+.\objects\mpu.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdio.h

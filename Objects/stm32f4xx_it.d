@@ -39,6 +39,7 @@
 .\objects\stm32f4xx_it.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\stm32f4xx_it.o: App\os.h
 .\objects\stm32f4xx_it.o: .\Bsp\i2c.h
+.\objects\stm32f4xx_it.o: .\App\os.h
 .\objects\stm32f4xx_it.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
 .\objects\stm32f4xx_it.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h
 .\objects\stm32f4xx_it.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h

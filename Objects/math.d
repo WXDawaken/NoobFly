@@ -1,0 +1,10 @@
+.\objects\math.o: Math\MATH.c
+.\objects\math.o: Math\mMATH.h
+.\objects\math.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
+.\objects\math.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h
+.\objects\math.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\math.o: .\Libraries\CMSIS\CoreSupport\core_cmInstr.h
+.\objects\math.o: .\Libraries\CMSIS\CoreSupport\core_cmFunc.h
+.\objects\math.o: .\Libraries\CMSIS\CoreSupport\core_cmSimd.h
+.\objects\math.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\math.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h
