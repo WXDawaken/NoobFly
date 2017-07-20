@@ -33,5 +33,4 @@
 .\objects\misc.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
 .\objects\misc.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
 .\objects\misc.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\misc.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\misc.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h

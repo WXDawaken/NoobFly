@@ -2,7 +2,7 @@
 #define __os_h
 
 #include "stm32f4xx.h"
-#include "i2c.h"
+//#include "i2c.h"
 #include <arm_math.h>
 
 typedef void(*Runable)(void);
@@ -18,6 +18,7 @@ typedef struct TASK
 #define uint unsigned int
 #define uchar unsigned char
 #define ulong unsigned long
+#define u8  unsigned char
 #define  p_f_max  10  
 extern unsigned long Sys_tick;
 

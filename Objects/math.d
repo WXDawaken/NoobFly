@@ -8,3 +8,5 @@
 .\objects\math.o: .\Libraries\CMSIS\CoreSupport\core_cmSimd.h
 .\objects\math.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\math.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\math.o: Math\MathType.h
+.\objects\math.o: .\App\MotionType.h

@@ -33,7 +33,6 @@
 .\objects\bsp.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
 .\objects\bsp.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
 .\objects\bsp.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\bsp.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
 .\objects\bsp.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
 .\objects\bsp.o: Bsp\usart.h
 .\objects\bsp.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdio.h

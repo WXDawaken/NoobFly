@@ -28,10 +28,10 @@ void mpu9150_Read(u8 *ACCEL,u8 *GYRO,u8 *MAG){
 	
 	setByte(AK8975_Addr,AK_CNTL,AK_MODE_SINGLE_MEASURE);
 	while((state=hearByte(AK8975_Addr,AK_STATUS_1))!=AK_DATA_READY);
-	*(MAG + 0)  = hearByte(AK8975_Addr,AK_HXH);
-	*(MAG + 1)  = hearByte(AK8975_Addr,AK_HXL);
-	*(MAG + 2)  = hearByte(AK8975_Addr,AK_HYH);
-	*(MAG + 3)  = hearByte(AK8975_Addr,AK_HYL);
+	*(MAG + 0)  = hearByte(AK8975_Addr,AK_HYH);
+	*(MAG + 1)  = hearByte(AK8975_Addr,AK_HYL);
+	*(MAG + 2)  = hearByte(AK8975_Addr,AK_HXH);
+	*(MAG + 3)  = hearByte(AK8975_Addr,AK_HXL);
 	*(MAG + 4)  = hearByte(AK8975_Addr,AK_HZH);
 	*(MAG + 5)  = hearByte(AK8975_Addr,AK_HZL);
 }
@@ -56,13 +56,14 @@ void mpu9150_RawData(float *ACCEL,float *GYRO,float *MAG)
    {
 	    temp=gy[i*2]<<8|gy[i*2+1];
 		  GYRO[i]=temp/16.4f;
+		  GYRO[i]=GYRO[i]/180*PI;
 		//  printf("%f\t",GYRO[i]);
 	 }
 	  //printf("\nmag:");
 	 for(i=0;i<3;i++)
 	 {
       temp=mg[i*2]<<8|mg[i*2+1];
-		  MAG[i]=temp/3.0f;
+		  MAG[i]=(i==2?-1:1)*temp/3.0f;
 		//  printf("%f\t",MAG[i]);
 	 }
 	 //printf("\n- - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
@@ -116,7 +117,7 @@ void mpu9150_Adjust_Val(float *ac_adjust,float *gy_adjust,float *mag_adjust)
 	AK8975_Adjust_Val(mg_ad);
 	for(i=0;i<3;i++)
 	  mag_adjust[i]=(mg_ad[i]-128)*0.5f/128+1;
-	printf("az max %f min %f mid %f",ac_max[2],ac_min[2],ac_mid[2]);
+//	printf("az max %f min %f mid %f",ac_max[2],ac_min[2],ac_mid[2]);
 }
 void AK8975_Adjust_Val(u8 *adjust)
 {
