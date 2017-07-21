@@ -17,7 +17,7 @@ void Motion_Detection()
 {
   
   Motion_Detect(&motion);
-   
+ //  Motion_Init(&motion,300L);
 }
 
 int main(void)
@@ -34,13 +34,16 @@ int main(void)
 	led_pin.GPIO_Pin=GPIO_Pin_4;
 	GPIO_Init(GPIOC,&led_pin);
 	iic_Init();
-	Motion_Init(&motion,init_e,300L);
+	Motion_Init(&motion,300L);
+	motion.Kp=4;
+	motion.Ki=0.00f;
 //	Motion_Set_Detect_Freq(300L);
-	f_add(led,100,0);
+//	f_add(led,100,0);
 	f_add(Motion_Detection,(ulong)(motion.Dt*1000),0);
   while(1)
   {
 	  os_run();
+		//Motion_Init(&motion,300L);
 		//led();
   }
 }

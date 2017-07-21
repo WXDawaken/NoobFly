@@ -22,6 +22,7 @@ extern float e_i,e_p;
 
 void  Euler2Q(euler e,quaternion *qu);
 void  Q2Euler(quaternion qu,euler *eul);
+void  R2Quater(float*mat,quaternion* qu);
 void  Vector_Rotation(float mat[9], float *v_source,float *v_result);
 void  Cross_Product3(float *m,float *n,float *c);
 void  Normalize(float *q,const int length);

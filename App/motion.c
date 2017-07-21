@@ -4,27 +4,40 @@
 #include "mpu.h"
 float g[3]={0.0f,0.0f,1.0};
 
-void Motion_Init(pMotion p_motion,euler init_e,unsigned long freq)
+void Motion_Init(pMotion p_motion,unsigned long freq)
 {
 	 unsigned char i;
-	 p_motion->Eul=init_e;
+	 float row_0[3],row_1[3];
+	 float Mat[9];
+//	 p_motion->Eul=init_e;
    Euler2Q(p_motion->Eul,&p_motion->Quater);
 	 update_mat(p_motion);
 	 p_motion->Dt=1.0f/freq;
 	 mpu9150_Init();
 	 mpu9150_Adjust_Val(p_motion->Accel_Adjust,p_motion->Gyro_Adjust,p_motion->Mag_Adjust);
+	 Motion_Update_Sensor(p_motion);
+	 Normalize(p_motion->Accel,3);
+	 Normalize(p_motion->Mag,3);
+	 Cross_Product3(p_motion->Accel,p_motion->Mag,row_1);
+	 Cross_Product3(row_1,p_motion->Accel,row_0);
+	 memcpy(Mat,row_0,3*sizeof(float));
+	 memcpy(Mat+3,row_1,3*sizeof(float));
+	 memcpy(Mat+6,p_motion->Accel,3*sizeof(float));
+	 R2Quater(Mat,&p_motion->Quater);
+	 Q2Euler(p_motion->Quater,&p_motion->Eul);
 	#ifdef __DEBUG
-	 printf("------------Inital Adjust Value-------------\n");
-	 printf("ac:");
-	 for(i=0;i<3;i++)
-     printf("%f\t",p_motion->Accel_Adjust[i]);
-	 printf("\ngy:");
-	 for(i=0;i<3;i++)
-		 printf("%f\t",p_motion->Gyro_Adjust[i]);
-   printf("\nmag:");
-	 for(i=0;i<3;i++)
-		 printf("%f\t",p_motion->Mag_Adjust[i]);
-   printf("\n");
+//	 printf("------------Inital Adjust Value-------------\n");
+//	 printf("ac:");
+//	 for(i=0;i<3;i++)
+//     printf("%f\t",p_motion->Accel_Adjust[i]);
+//	 printf("\ngy:");
+//	 for(i=0;i<3;i++)
+//		 printf("%f\t",p_motion->Gyro_Adjust[i]);
+//   printf("\nmag:");
+//	 for(i=0;i<3;i++)
+//		 printf("%f\t",p_motion->Mag_Adjust[i]);
+//   printf("\n");
+     printf("%f\n",p_motion->Eul.Yaw);
 	#endif
 }
 void Motion_Update_Sensor(pMotion p_motion)
@@ -38,22 +51,24 @@ void Motion_Update_Sensor(pMotion p_motion)
 			p_motion->Mag[i]=p_motion->Mag[i]*p_motion->Mag_Adjust[i];	
 		} 
 	 #ifdef __DEBUG
-	  printf("\n------------Adjusted Value-------------\n");
-	  printf("ac:");
-	  for(i=0;i<3;i++)
-      printf("%f\t", p_motion->Accel[i]);
-	  printf("\ngy:");
-	  for(i=0;i<3;i++)
-		  printf("%f\t", p_motion->Gyro[i]);
-    printf("\nmag:");
-	  for(i=0;i<3;i++)
-		  printf("%f\t",p_motion->Mag[i]);
-    printf("\n");
+//	  printf("\n------------Adjusted Value-------------\n");
+//	  printf("ac:");
+//	  for(i=0;i<3;i++)
+//      printf("%f\t", p_motion->Accel[i]);
+//	  printf("\ngy:");
+//	  for(i=0;i<3;i++)
+//		  printf("%f\t", p_motion->Gyro[i]);
+//    printf("\nmag:");
+//	  for(i=0;i<3;i++)
+//		  printf("%f\t",p_motion->Mag[i]);
+//    printf("\n");
 	 #endif 
 }
 void Motion_Detect(pMotion p_motion)
 {
+	 int i;
 	 float vg[3],h[3],b[3],w[3];
+	 Motion_Update_Sensor(p_motion);
    Normalize(p_motion->Accel,3);
 	 Normalize(p_motion->Mag,3);
 	 Vector_Rotation(p_motion->N2B_Mat,g,vg);
@@ -66,6 +81,19 @@ void Motion_Detect(pMotion p_motion)
 	 Normalize(p_motion->Quater.q,4);
 	 Q2Euler(p_motion->Quater,&p_motion->Eul);
 	 update_mat(p_motion);
+	 	#ifdef __DEBUG
+	  //printf("\n------------Adjusted Value-------------\n");
+	  //printf("yaw:");
+	  //for(i=0;i<3;i++)
+      printf("%f\n", p_motion->Eul.Yaw);
+//	  printf("\ngy:");
+//	  for(i=0;i<3;i++)
+//		  printf("%f\t", p_motion->Gyro[i]);
+//    printf("\nmag:");
+//	  for(i=0;i<3;i++)
+//		  printf("%f\t",p_motion->Mag[i]);
+//    printf("\n");
+	 #endif 
 }
 void get_Erro(float *e,float *a,float *v,float *m,float *w)
 {

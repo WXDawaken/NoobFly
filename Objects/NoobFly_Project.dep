@@ -933,7 +933,7 @@ I (.\App\os.h)(0x59705474)
 I (.\Libraries\CMSIS\CoreSupport\arm_math.h)(0x573CA1AB)
 I (G:\KEIL5\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (G:\KEIL5\ARM\ARMCC\include\math.h)(0x5970F162)
-F (.\App\main.c)(0x59710938)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\App\main.c)(0x5971DA94)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (.\Bsp\bsp.h)(0x5970FE3F)
 I (.\Libraries\CMSIS\DeviceSupport\stm32f4xx.h)(0x596E0C8A)
 I (.\Libraries\CMSIS\CoreSupport\core_cm4.h)(0x573CA1AC)
@@ -976,8 +976,8 @@ I (G:\KEIL5\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (G:\KEIL5\ARM\ARMCC\include\math.h)(0x5970F162)
 I (App\mpu.h)(0x596DC93B)
 I (.\Bsp\i2c.h)(0x59706C2D)
-I (App\motion.h)(0x5971081D)
-I (.\Math\mMATH.h)(0x597103A4)
+I (App\motion.h)(0x5971D136)
+I (.\Math\mMATH.h)(0x5971C837)
 I (.\Math\MathType.h)(0x59710389)
 I (.\App\MotionType.h)(0x59710544)
 F (.\App\stm32f4xx_it.c)(0x596EFFF5)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\stm32f4xx_it.o --omf_browse .\objects\stm32f4xx_it.crf --depend .\objects\stm32f4xx_it.d)
@@ -1101,9 +1101,9 @@ I (.\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h)(0x573F17FB)
 I (.\Libraries\CMSIS\CoreSupport\arm_math.h)(0x573CA1AB)
 I (G:\KEIL5\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (G:\KEIL5\ARM\ARMCC\include\math.h)(0x5970F162)
-F (.\App\motion.c)(0x59710915)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\motion.o --omf_browse .\objects\motion.crf --depend .\objects\motion.d)
-I (App\motion.h)(0x5971081D)
-I (.\Math\mMATH.h)(0x597103A4)
+F (.\App\motion.c)(0x5971DA8F)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\motion.o --omf_browse .\objects\motion.crf --depend .\objects\motion.d)
+I (App\motion.h)(0x5971D136)
+I (.\Math\mMATH.h)(0x5971C837)
 I (.\Libraries\CMSIS\CoreSupport\arm_math.h)(0x573CA1AB)
 I (.\Libraries\CMSIS\CoreSupport\core_cm4.h)(0x573CA1AC)
 I (G:\KEIL5\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -1149,8 +1149,8 @@ I (App\mpu.h)(0x596DC93B)
 I (.\Bsp\i2c.h)(0x59706C2D)
 I (.\App\os.h)(0x59705474)
 F (.\App\MotionType.h)(0x59710544)()
-F (.\Math\MATH.c)(0x597103A1)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\math.o --omf_browse .\objects\math.crf --depend .\objects\math.d)
-I (Math\mMATH.h)(0x597103A4)
+F (.\Math\MATH.c)(0x5971DA14)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\App -I .\Bsp -I .\Libraries\CMSIS\CoreSupport -I .\Libraries\CMSIS\DeviceSupport -I .\Libraries\CMSIS\DeviceSupport\startup -I .\Libraries\STM32F4xx_StdPeriph_Driver\inc -I .\Libraries\STM32F4xx_StdPeriph_Driver\src -I .\Math-I.\RTE\_Project-IG:\KEIL5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IG:\KEIL5\ARM\CMSIS\Include-D__UVISION_VERSION="523" -DSTM32F407xx -DSTM32F40_41xxx -D__FPU_PRESENT="1" -D__FPU_USED="1" -DARM_MATH_CM4 -D__CC_ARM -D__DEBUG --C99-o .\objects\math.o --omf_browse .\objects\math.crf --depend .\objects\math.d)
+I (Math\mMATH.h)(0x5971C837)
 I (.\Libraries\CMSIS\CoreSupport\arm_math.h)(0x573CA1AB)
 I (.\Libraries\CMSIS\CoreSupport\core_cm4.h)(0x573CA1AC)
 I (G:\KEIL5\ARM\ARMCC\include\stdint.h)(0x57F606B8)

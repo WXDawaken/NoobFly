@@ -14,6 +14,15 @@ void  Euler2Q(euler e,quaternion *qu)
 	      +sin_roll_h*cos_pitch_h*sin_yaw_h;
 	 qu->q[3]=cos_roll_h*cos_pitch_h*sin_yaw_h
 	      +sin_roll_h*sin_pitch_h*cos_yaw_h;
+	 	qu->q0q1=qu->q[0]*qu->q[1];
+	qu->q0q2=qu->q[0]*qu->q[2];
+	qu->q0q3=qu->q[0]*qu->q[3];
+	qu->q1q1=qu->q[1]*qu->q[1];
+	qu->q1q2=qu->q[1]*qu->q[2];
+	qu->q1q3=qu->q[1]*qu->q[3];
+	qu->q2q2=qu->q[2]*qu->q[2];
+	qu->q2q3=qu->q[2]*qu->q[3];
+  qu->q3q3=qu->q[3]*qu->q[3];
 	return;
 }
 
@@ -23,12 +32,30 @@ void Q2Euler(quaternion qu,euler *eul)
   r_yaw=atan2f(2*(qu.q1q2+qu.q0q3),(1-2*(qu.q2q2+qu.q3q3)));
   r_pitch=-asin(2*(qu.q1q3-qu.q0q2));
 	r_roll=atan2f(2*(qu.q2q3+qu.q0q1),(1-2*(qu.q1q1+qu.q2q2)));
-	eul->Yaw=(r_yaw<0?2*PI-r_yaw:r_yaw)/PI*180;
+	eul->Yaw=(r_yaw<0?2*PI+r_yaw:r_yaw)/PI*180;
 	eul->Pitch=r_pitch/PI*180;
 	eul->Roll=r_roll/PI*180;
 }
 
-	
+void  R2Quater(float*mat,quaternion* qu)
+{
+   float t,t0=1.0f+mat[0]+mat[4]+mat[8],t1=mat[7]-mat[5],t2=mat[2]-mat[6],t3=mat[3]-mat[1];
+   SQRT(t0,&t);
+   qu->q[0]=t/2;
+   qu->q[1]=t1/4*qu->q[0];
+	 qu->q[2]=t2/4*qu->q[0];
+	 qu->q[3]=t3/4*qu->q[0];
+	 qu->q0q0=qu->q[0]*qu->q[0];
+	qu->q0q1=qu->q[0]*qu->q[1];
+	qu->q0q2=qu->q[0]*qu->q[2];
+	qu->q0q3=qu->q[0]*qu->q[3];
+	qu->q1q1=qu->q[1]*qu->q[1];
+	qu->q1q2=qu->q[1]*qu->q[2];
+	qu->q1q3=qu->q[1]*qu->q[3];
+	qu->q2q2=qu->q[2]*qu->q[2];
+	qu->q2q3=qu->q[2]*qu->q[3];
+  qu->q3q3=qu->q[3]*qu->q[3];
+}	
 void Vector_Rotation(float *mat, float *v_source,float *v_result)
 {
   arm_matrix_instance_f32 matN,vm,result;
