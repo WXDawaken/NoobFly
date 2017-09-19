@@ -6,12 +6,12 @@ unsigned char I2C_Err;
 
 void Delay(void)
 {
-	Sys_tick=30;
-	SysTick->CTRL|= SysTick_CTRL_TICKINT_Msk|SysTick_CTRL_ENABLE_Msk;   
-  while(Sys_tick);
-	Sys_tick=0;
-//	uint8_t i;
-//	for (i = 0; i < 30; i++);
+//	Sys_tick=30;
+//	SysTick->CTRL|= SysTick_CTRL_TICKINT_Msk|SysTick_CTRL_ENABLE_Msk;   
+//  while(Sys_tick);
+//	Sys_tick=0;
+    double start=Microsec();
+	  while((Microsec()-start)<2);
 }
 void iic_Init(void){
    GPIO_InitTypeDef  GPIO_InitStructure;
@@ -137,6 +137,15 @@ u8 setByte(u8 deviceAddr,u8 registerAddr,u8 data){
 	return 1;
 }
 
+u8 iic_Command(u8 deviceAddr,u8 cmd)
+{
+	iic_Start();
+	iic_WriteByte(deviceAddr);
+	iic_WaitAck();
+	iic_WriteByte(cmd);
+	iic_WaitAck();
+	iic_Stop();
+}
 u8 hearByte(u8 deviceAddr,u8 registerAddr){
 	u8 data;
 	
@@ -155,7 +164,7 @@ u8 hearByte(u8 deviceAddr,u8 registerAddr){
 	return data;
 }
 
-void iic_burst_read(u8* array,u8 length,u8 deviceAddr,u8 regAddr)
+void iic_burst_read(u8* array,u8 length,u8 deviceAddr,u8 regAddr,u8 direct)
 {
    	 uint8_t i;
      iic_Start();
@@ -166,10 +175,21 @@ void iic_burst_read(u8* array,u8 length,u8 deviceAddr,u8 regAddr)
 	   iic_Start();
 	   iic_WriteByte(deviceAddr+1);
 	   iic_WaitAck();
-	   for(i=0;i<length-1;i++)
-	   {
-		   array[i]=iic_ReadByte();
-       iic_Ack();			 
+	   if(DIRECT_LSB == direct)
+		 {
+			 for(i=0;i<length-1;i++)
+			 {
+				 array[i]=iic_ReadByte();
+				 iic_Ack();			 
+			 }
+	   }
+		 else
+		 {
+		   for(i=length-1;i>0;i--)
+			 {
+				 array[i]=iic_ReadByte();
+				 iic_Ack();		
+			 }
 		 }
 		 array[i]=iic_ReadByte();
 		 iic_NoAck();

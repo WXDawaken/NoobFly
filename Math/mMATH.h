@@ -22,9 +22,10 @@ extern float e_i,e_p;
 
 void  Euler2Q(euler e,quaternion *qu);
 void  Q2Euler(quaternion qu,euler *eul);
-void  R2Quater(float*mat,quaternion* qu);
+void  R2Quater(float DCMgb[3][3],quaternion* qu);
 void  Vector_Rotation(float mat[9], float *v_source,float *v_result);
 void  Cross_Product3(float *m,float *n,float *c);
 void  Normalize(float *q,const int length);
 float Q_rsqrt(float number);
+float low_pass(float sample[],float cutoff_freq);
 #endif

@@ -28,16 +28,16 @@ void os_start(){
 		 os_Tasks[i].t_Run=0x00000000;
 	}
 //	Timer_Init();
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);
 	TIM_TimeBaseInitTypeDef timer;
 	TIM_TimeBaseStructInit(&timer);
 	timer.TIM_Prescaler=0;
 	timer.TIM_CounterMode=TIM_CounterMode_Down;
 	timer.TIM_ClockDivision=TIM_CKD_DIV1;
   timer.TIM_Period=167999;	
-	TIM_TimeBaseInit(TIM2,&timer);
-	TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE);
-	TIM_Cmd(TIM2,ENABLE);
+	TIM_TimeBaseInit(TIM3,&timer);
+	TIM_ITConfig(TIM3,TIM_IT_Update,ENABLE);
+	TIM_Cmd(TIM3,ENABLE);
 }
 
 void f_add(void add(),ulong time,ulong Delay){

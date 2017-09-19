@@ -33,5 +33,11 @@
 .\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
 .\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
 .\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
+.\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma2d.h
+.\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fmc.h
+.\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_ltdc.h
+.\objects\usart.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sai.h
 .\objects\usart.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usart.o: Bsp\FIFO.h
+.\objects\usart.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdlib.h

@@ -5,6 +5,7 @@
 #include "i2c.h"
 #include <arm_math.h>
 #include "USART.h"
+
 // 定义MPU6050内部地址
 //****************************************
 #define        SMPLRT_DIV          0x19        //陀螺仪采样率，典型值：0x07(125Hz)
@@ -56,14 +57,39 @@
 #define        AK_MODE_SINGLE_MEASURE  0x01
 #define        AK_MODE_SELF_TEST  0x08
 #define        AK_MODE_FUSE_ROM   0x0F
-//****************************
+// MS5611 COMMAND & REG
+#define        MS_RESET           0X1E
+#define        MS_D1              0x40      // 0x40:256 
+#define        MS_D2              0x50
+#define        MS_RESOLUTION_256  0x00
+#define        MS_RESOLUTION_512  0X02
+#define        MS_RESOLUTION_1024 0X04
+#define        MS_RESOLUTION_2048 0X06
+#define        MS_RESOLUTION_4096 0x08
+#define        MS_PROM            0xA0
+#define        MS_ADC_READ        0x00
+
+//***************Device Address*************
 
 #define        MPU6050_Addr        0xD0          //定义器件在IIC总线中的从地址,根据ALT  ADDRESS地址引脚不同修改
-#define        AK8975_Addr        0x18
+#define        AK8975_Addr         0x18
+#define        MS5611_Addr         0xEE
+//*****************************************
+typedef unsigned long long u64;
+//****************Global Variable**********
+extern int Tref;
+extern u16 C[7];
+extern int temp_pressure;
+extern long TEMP,Pressure;
+//*****************************************
+
 void mpu9150_Read(u8 *ACCEL,u8 *GYRO,u8 *MAG);
 void mpu9150_Init(void);
 void mpu9150_RawData(float *ACCEL,float *GYRO,float *MAG);
 void mpu9150_Adjust_Val(float *ac_adjust,float *gy_adjust,float *mag_adjust);
 void AK8975_Adjust_Val(u8 *adjust);
-
+void MS5611_Init();
+long MS5611_Get_Pressure();
+void Delay10ms(void);
+void Delay1ms(void);
 #endif

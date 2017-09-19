@@ -3,7 +3,12 @@
 
 #include "stm32f4xx.h"
 #include <stdio.h>
+#include "FIFO.h"
+extern unsigned char isframe;
+extern unsigned char isStart;
+extern unsigned char isStop;
 
+extern FIFO fifo_uart3;
 void USART_Initialize(void);
 void USART1_SendByte(uint8_t Data);
 void USART1_SendNByte(uint8_t *pData, uint16_t Length);

@@ -1,5 +1,5 @@
 --cpu=Cortex-M4.fp
-".\objects\startup_stm32f40_41xxx.o"
+".\objects\startup_stm32f429_439xx.o"
 ".\objects\misc.o"
 ".\objects\stm32f4xx_adc.o"
 ".\objects\stm32f4xx_can.o"
@@ -28,12 +28,16 @@
 ".\objects\bsp.o"
 ".\objects\usart.o"
 ".\objects\i2c.o"
+".\objects\sys_time.o"
+".\objects\fifo.o"
 ".\objects\main.o"
 ".\objects\stm32f4xx_it.o"
 ".\objects\mpu.o"
 ".\objects\os.o"
 ".\objects\motion.o"
+".\objects\pwm.o"
 ".\objects\math.o"
+".\objects\pid.o"
 --library_type=microlib --strict --scatter ".\Objects\ExecutableFile.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

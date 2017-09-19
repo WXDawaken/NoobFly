@@ -8,7 +8,9 @@ void NVIC_Configuration(void)
   NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;                 
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;                    
   NVIC_Init(&NVIC_InitStructure);
-	NVIC_InitStructure.NVIC_IRQChannel=TIM2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannel = USART3_IRQn;
+	  NVIC_Init(&NVIC_InitStructure);
+	NVIC_InitStructure.NVIC_IRQChannel=TIM3_IRQn;
   
   NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0x01;
   NVIC_InitStructure.NVIC_IRQChannelSubPriority=0x03;
@@ -22,7 +24,7 @@ void BSP_Init(void)
 {                                                   
   NVIC_Configuration();     
   USART_Initialize();	
-	SysTick_Config(SystemCoreClock/10000000);
-	SysTick->CTRL&=~SysTick_CTRL_ENABLE_Msk;
+	SystemCoreClockUpdate();
+	Sys_Time_Init(SystemCoreClock);
 }
 

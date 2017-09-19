@@ -33,9 +33,15 @@
 .\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
 .\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
 .\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
+.\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma2d.h
+.\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fmc.h
+.\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_ltdc.h
+.\objects\stm32f4xx_it.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sai.h
 .\objects\stm32f4xx_it.o: .\Bsp\usart.h
 .\objects\stm32f4xx_it.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\stm32f4xx_it.o: .\Bsp\FIFO.h
+.\objects\stm32f4xx_it.o: .\Bsp\Sys_Time.h
 .\objects\stm32f4xx_it.o: App\os.h
 .\objects\stm32f4xx_it.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
 .\objects\stm32f4xx_it.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h

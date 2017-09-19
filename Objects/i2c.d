@@ -33,9 +33,14 @@
 .\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_rng.h
 .\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_can.h
 .\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dac.h
-.\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fsmc.h
+.\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dcmi.h
+.\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_dma2d.h
+.\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_fmc.h
+.\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_ltdc.h
+.\objects\i2c.o: .\Libraries\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sai.h
 .\objects\i2c.o: .\App\os.h
 .\objects\i2c.o: .\Libraries\CMSIS\CoreSupport\arm_math.h
 .\objects\i2c.o: .\Libraries\CMSIS\CoreSupport\core_cm4.h
 .\objects\i2c.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\i2c.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\i2c.o: .\Bsp\Sys_Time.h

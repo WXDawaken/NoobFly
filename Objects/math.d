@@ -10,3 +10,5 @@
 .\objects\math.o: G:\KEIL5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\math.o: Math\MathType.h
 .\objects\math.o: .\App\MotionType.h
+.\objects\math.o: .\Math\PID.h
+.\objects\math.o: .\Math\PIDType.h

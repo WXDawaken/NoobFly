@@ -37,15 +37,52 @@ void Q2Euler(quaternion qu,euler *eul)
 	eul->Roll=r_roll/PI*180;
 }
 
-void  R2Quater(float*mat,quaternion* qu)
+void  R2Quater(float DCMgb[3][3],quaternion* qu)
 {
-   float t,t0=1.0f+mat[0]+mat[4]+mat[8],t1=mat[7]-mat[5],t2=mat[2]-mat[6],t3=mat[3]-mat[1];
-   SQRT(t0,&t);
-   qu->q[0]=t/2;
-   qu->q[1]=t1/4*qu->q[0];
-	 qu->q[2]=t2/4*qu->q[0];
-	 qu->q[3]=t3/4*qu->q[0];
-	 qu->q0q0=qu->q[0]*qu->q[0];
+	float		trace;
+	float		s;
+	int     	i,j,k;
+	float		q[4];
+	int 	next[ 3 ] = { 1, 2, 0 };
+
+	trace = DCMgb[0][0] +DCMgb[1][1] + DCMgb[2][2];
+
+	if ( trace > 0.0f ) 
+	{ s = sqrtf(trace + 1.0);
+		qu->q[0]= s / 2.0f;
+		if(s!=0)
+			 s = 0.5f / s;
+		qu->q[1]= ( DCMgb[ 2 ][ 1 ] - DCMgb[ 1 ][ 2 ] ) * s;
+		qu->q[2] = ( DCMgb[ 0 ][ 2 ] - DCMgb[ 2 ][ 0 ] ) * s;
+		qu->q[3] = ( DCMgb[ 1 ][ 0 ] - DCMgb[ 0 ][ 1 ] ) * s;
+
+	} 
+	else 
+	{
+		i = 0;
+		if ( DCMgb[ 1 ][ 1 ] > DCMgb[ 0 ][ 0 ] ) {
+			i = 1;
+		}
+		if ( DCMgb[ 2 ][ 2 ] > DCMgb[ i ][ i ] ) {
+			i = 2;
+		}
+		j = next[ i ];
+		k = next[ j ];
+		
+		s = sqrt((DCMgb[i][i] - (DCMgb[j][j] + DCMgb[k][k])) + 1.0f);
+		q[i] = s * 0.5f;
+    if( s!= 0.0f) 
+			s = 0.5f / s;
+    q[3] = (-DCMgb[j][k] - DCMgb[k][j]) * s;
+    q[j] = (DCMgb[i][j] + DCMgb[j][i]) * s;
+    q[k] = (DCMgb[i][k] + DCMgb[k][i]) * s;
+    qu->q[1] = q[0];
+    qu->q[2]	= q[1];
+    qu->q[3]	= q[2];
+    qu->q[0] = q[3];
+	}
+
+	qu->q0q0=qu->q[0]*qu->q[0];
 	qu->q0q1=qu->q[0]*qu->q[1];
 	qu->q0q2=qu->q[0]*qu->q[2];
 	qu->q0q3=qu->q[0]*qu->q[3];
@@ -99,3 +136,10 @@ float Q_rsqrt(float number)
     return y;
 }	
 
+float low_pass(float sample[],float cutoff_freq)
+{
+  float result;
+	float dt=1/cutoff_freq;
+  result=(1-dt)*sample[1]+dt*sample[0];
+  return result;
+}

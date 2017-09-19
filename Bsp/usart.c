@@ -1,5 +1,5 @@
 #include "usart.h"
-
+#include "stdlib.h"
 void USART_GPIO_Configuration(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
@@ -39,16 +39,19 @@ void USART_Configuration(void)
   USART_Init(USART1, &USART_InitStructure);                        
   USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);                     
   USART_Cmd(USART1, ENABLE);   
+	USART_InitStructure.USART_BaudRate = 9600;  
   USART_Init(USART3, &USART_InitStructure);                        
   USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);                     
   USART_Cmd(USART3, ENABLE);    	
-	USART_ClearFlag(USART3,USART_FLAG_TC);
+	//USART_ClearFlag(USART3,USART_FLAG_TC);
 }
 
 void USART_Initialize(void)
 {
-  USART_GPIO_Configuration();
+  FIFO_Init(&fifo_uart3,100);
+	USART_GPIO_Configuration();
   USART_Configuration();
+	
 }
 
 
@@ -109,16 +112,16 @@ void USART3_SendString(uint8_t *String)
 
 int fputc(int ch, FILE *f)
 {
-  USART_SendData(USART1, ch);
-  while(USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);    
+  USART_SendData(USART3, ch);
+  while(USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET);    
 
   return ch;
 }
 
 int fgetc(FILE *f)
 {
-  while(USART_GetFlagStatus(USART1, USART_FLAG_RXNE) == RESET);
+  while(USART_GetFlagStatus(USART3, USART_FLAG_RXNE) == RESET);
 
-  return (int)USART_ReceiveData(USART1);
+  return (int)USART_ReceiveData(USART3);
 }
 
